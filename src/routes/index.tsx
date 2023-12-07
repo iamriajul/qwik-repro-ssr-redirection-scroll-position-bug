@@ -5,8 +5,15 @@ import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
+import {Form, routeAction$} from "@builder.io/qwik-city";
+
+export const formSubmitAction = routeAction$(async (values, ctx) => {
+  throw ctx.redirect(303, "/success");
+});
 
 export default component$(() => {
+  const formSubmit = formSubmitAction();
+
   return (
     <>
       <Hero />
@@ -96,6 +103,18 @@ export default component$(() => {
             </ul>
           </Infobox>
         </div>
+      </div>
+
+      <div class="container container-center container-spacing-xl">
+        <h2>The Form</h2>
+        <p>This form submit will trigger a redirect to success page</p>
+        <Form
+          action={formSubmit}
+          class="container container-flex"
+        >
+          <input type="text" name="name" placeholder="Name"/>
+          <button type="submit">Submit</button>
+        </Form>
       </div>
     </>
   );
