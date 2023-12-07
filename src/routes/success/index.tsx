@@ -1,8 +1,7 @@
-import {useNavigate} from "@builder.io/qwik-city";
-import {component$, Slot, useVisibleTask$} from "@builder.io/qwik";
-
+import {component$, useVisibleTask$} from "@builder.io/qwik";
 
 export default component$(() => {
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     setTimeout(async () => {
       const defaults = {
