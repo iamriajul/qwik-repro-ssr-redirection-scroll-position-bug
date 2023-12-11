@@ -16,8 +16,8 @@ export default component$(() => {
 
   return (
     <>
-      <Hero />
-      <Starter />
+      <Hero/>
+      <Starter/>
 
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
@@ -25,9 +25,9 @@ export default component$(() => {
       <div class="container container-center container-spacing-xl">
         <h3>
           You can <span class="highlight">count</span>
-          <br /> on me
+          <br/> on me
         </h3>
-        <Counter />
+        <Counter/>
       </div>
 
       <div class="container container-flex">
@@ -38,22 +38,22 @@ export default component$(() => {
           <>
             <p>
               <code>npm run dev</code>
-              <br />
+              <br/>
               Starts the development server and watches for changes
             </p>
             <p>
               <code>npm run preview</code>
-              <br />
+              <br/>
               Creates production build and starts a server to preview it
             </p>
             <p>
               <code>npm run build</code>
-              <br />
+              <br/>
               Creates production build
             </p>
             <p>
               <code>npm run qwik add</code>
-              <br />
+              <br/>
               Runs the qwik CLI to add integrations
             </p>
           </>
@@ -118,8 +118,18 @@ export default component$(() => {
       </div>
 
       <div class="container container-center container-spacing-xl">
+        <p>Action submit withou Form component test</p>
+        <button
+          type="button"
+          onClick$={() => {
+            formSubmit.submit();
+          }}
+        >Redirect to Success Page using Route Action</button>
+      </div>
+
+      <div class="container container-center container-spacing-xl">
         <p>Click the Link, This redirect works as expected, it does reset the scroll position to 0</p>
-        <Link href="/redirect-to-success">Redirect to Success Page</Link>
+        <Link href="/redirect-to-success">Redirect to Success Page using Link component</Link>
       </div>
     </>
   );
