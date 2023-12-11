@@ -5,7 +5,7 @@ import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
-import {Form, routeAction$} from "@builder.io/qwik-city";
+import {Form, Link, routeAction$} from "@builder.io/qwik-city";
 
 export const formSubmitAction = routeAction$(async (values, ctx) => {
   throw ctx.redirect(303, "/success");
@@ -115,6 +115,11 @@ export default component$(() => {
           <input type="text" name="name" placeholder="Name"/>
           <button type="submit">Submit</button>
         </Form>
+      </div>
+
+      <div class="container container-center container-spacing-xl">
+        <p>Click the Link, This redirect works as expected, it does reset the scroll position to 0</p>
+        <Link href="/redirect-to-success">Redirect to Success Page</Link>
       </div>
     </>
   );
